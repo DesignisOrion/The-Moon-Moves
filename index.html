@@ -3,6 +3,7 @@
   <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   <body style="margin: 0px; overflow: hidden">
     <a-scene stats embedded arjs="trackingMethod: best; debugUIEnabled: false">
       <a-assets>
@@ -12,27 +13,123 @@
         ></a-asset-item>
       </a-assets>
       <a-marker preset="kanji">
+        <a-entity
+          id="particle-system"
+          position="0 0 0"
+          particle-system="preset: dust; particleCount: 3000; color: 	#FFFFFF,#C0C0C0,#6a0dad,#ff00ff; size: 3; blending: 2"
+        ></a-entity>
+        <!-- SUN -->
+        <a-entity rotation="0 0 0">
+          <a-sphere
+            id="sun"
+            position="0 1 0"
+            width="2"
+            height="2"
+            color="#cc5500"
+          ></a-sphere>
+        </a-entity>
+
+       
         <a-entity>
           <a-animation
             attribute="rotation"
             dur="2000"
+            `
             easing="linear"
             from="0 0 0"
             to="0 360 0"
             repeat="indefinite"
           ></a-animation>
-          <a-entity rotation="0 0 3">
-            <a-sphere id="mercury" radius="0.3" position="2 0 2" color="#2B2D2F"></a-sphere>
+
+          <!-- MERCURY -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="mercury"
+              radius="0.1"
+              position="0 1 1.5"
+              color="#2B2D2F"
+            ></a-sphere>
           </a-entity>
-        </a-entity>
-        <a-entity rotation="0 0 0">
-          <a-sphere
-            id="sun"
-            position="0 1 -1"
-            width="2"
-            height="3"
-            color="#F9D71C"
-          ></a-sphere>
+
+          <!-- VENUS -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 2"
+              color="#CCCC00"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- EARTH -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 3"
+              color="#0077be"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- MARS -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 4"
+              color="#8b0000"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- JUPITER -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 5"
+              color="#7A7164"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- SATURN -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 6"
+              color="#DEBB8F"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- URANUS -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 7"
+              color="#97B8C9"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- NEPTUNE -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 8"
+              color="#506188"
+            ></a-sphere>
+          </a-entity>
+
+          <!-- PLUTO -->
+          <a-entity rotation="0 0 2">
+            <a-sphere
+              id="venus"
+              radius="0.2"
+              position="0 1 9"
+              color="#000000"
+            ></a-sphere>
+          </a-entity>
         </a-entity>
       </a-marker>
       <a-entity camera></a-entity>
